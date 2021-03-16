@@ -2,10 +2,7 @@ var express = require("express")
 var mongoose = require("mongoose")
 var db = require("../models")
 var router = express.Router()
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness-tracker", {
-    useNewUrlParser: true,
-    useFindAndModify: false
-});
+
 router.get("/api/workouts", function(req, res) {
     db.Workout.aggregate([{ $addFields: { totalDuration: { $sum: "$exercises.duration" } } }])
         .then(dbWorkout => {
