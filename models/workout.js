@@ -9,16 +9,16 @@ var workoutSchema = new Schema({
         type: {
             type: String,
             trim: true,
-            required: "Enter your exercise type"
+
         },
         name: {
             type: String,
             trim: true,
-            required: "Enter your exercise name"
+
         },
         duration: {
             type: Number,
-            required: "Enter your exercise duration in minutes"
+
         },
         distance: {
             type: Number
